@@ -1,45 +1,21 @@
-<script lang="ts">
-	import Counter from '$lib/Counter.svelte';
-</script>
-
-<main>
-	<h1>The Flag Train</h1>
-
-	<Counter />
-
-	<p>Visit <a class="text-blue-600 underline" href="https://svelte.dev">svelte.dev</a> to learn how to build Svelte apps.</p>
-</main>
+<a href="start">Start</a>
 
 <style style lang="postcss">
-	main {
-		@apply text-center;
-		@apply p-4;
-		@apply mx-auto;
-	}
-
-	h1 {
-		@apply text-red-600;
-		@apply uppercase;
-		@apply text-6xl;
-		@apply font-thin;
-		@apply leading-tight;
-		@apply my-16 mx-auto;
-		@apply max-w-xs;
-	}
-
-	p {
-		@apply max-w-xs;
-		@apply my-8 mx-auto;
-		@apply leading-snug;
-	}
-
-	@screen sm {
-		h1 {
-			@apply max-w-none;
-		}
-
-		p {
-			@apply max-w-none;
-		}
+	a {
+		@apply px-4;
+		@apply py-2;
+		@apply text-2xl;
+		@apply font-semibold;
+		@apply rounded-lg;
+		@apply shadow-md;
+		@apply border;
+		@apply bg-red-500;
+		@apply hover:text-red-500;
+		@apply hover:bg-black;
+		@apply hover:border-transparent;
+		@apply focus:outline-none;
+		@apply focus:ring-2;
+		@apply focus:ring-red-500;
+		@apply focus:ring-offset-2;
 	}
 </style>
