@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>The Flag 🏳️ Train 🚅</title>
+</svelte:head>
+
 <script>
 	import '../app.postcss';
 </script>
