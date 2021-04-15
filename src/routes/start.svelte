@@ -1,4 +1,5 @@
 <script lang="ts">
     import Flag from "$lib/Flag.svelte";
+    let country = "AR";
 </script>
-<Flag country="AR"></Flag>
+<Flag {country}></Flag>
