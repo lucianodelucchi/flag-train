@@ -1,4 +1,4 @@
-<a href="start">Start</a>
+<a href="/start">Start</a>
 
 <style style lang="postcss">
 	a {

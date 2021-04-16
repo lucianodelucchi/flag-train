@@ -9,7 +9,7 @@
 <main>
 	<h1><a href=".">The Flag Train</a></h1>
 
-	<slot/>
+	<slot></slot>
 
 	<p>Visit <a class="text-blue-600 underline" href="https://svelte.dev">svelte.dev</a> to learn how to build Svelte apps.</p>
 </main>
