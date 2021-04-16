@@ -1,7 +1,7 @@
 <script lang="ts">
-    export let country;
+    export let countryCode: string;
 </script>
 
 <div class="flex justify-center">
-    <img src="/flags/svg/{country.toUpperCase()}.svg" class="lg:w-1/2 w-full" alt="Flag to guess..."/>
+    <img src="/flags/svg/{countryCode.toLowerCase()}.svg" class="lg:w-1/2 w-full" alt="Flag to guess..."/>
 </div>

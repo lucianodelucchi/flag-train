@@ -1,5 +1,9 @@
 <script lang="ts">
     import Flag from "$lib/Flag.svelte";
-    let country = "AR";
+    
+    import countries from '$lib/Countries';
+
+    const countryCode = countries.filter(c => c.name.official.includes('Arg'))[0].cca3;
+    
 </script>
-<Flag {country}></Flag>
+<Flag {countryCode}></Flag>
