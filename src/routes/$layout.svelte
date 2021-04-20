@@ -24,22 +24,22 @@
 	h1 {
 		@apply text-red-600;
 		@apply uppercase;
-		@apply text-6xl;
+		@apply text-4xl;
 		@apply font-thin;
-		@apply leading-tight;
-		@apply mt-8 mb-16 mx-auto;
+		@apply mt-8 mb-8 mx-auto;
 		@apply max-w-xs;
 	}
 
 	p {
 		@apply max-w-xs;
-		@apply my-16 mx-auto;
+		@apply my-8 mx-auto;
 		@apply leading-snug;
 	}
 
 	@screen sm {
 		h1 {
 			@apply max-w-none;
+			@apply text-6xl;
 		}
 
 		p {
