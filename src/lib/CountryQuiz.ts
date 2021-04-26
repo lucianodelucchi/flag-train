@@ -4,7 +4,7 @@ import { getRandomIndices, shuffle } from '$lib/_utils';
 
 const numberOfCountries = countries.length;
 
-const selectCountries = () => getRandomIndices(numberOfCountries).map((i) => countries[i]);
+const selectCountries = () => [...getRandomIndices(numberOfCountries)].map((i) => countries[i]);
 
 export interface CountryQuiz {
 	countryToGuess: Country;
