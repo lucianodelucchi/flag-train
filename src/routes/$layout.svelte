@@ -5,23 +5,31 @@
 <svelte:head>
 	<title>The Flag 🏳️ Train 🚅</title>
 </svelte:head>
-
-<main>
-	<h1><a href=".">The Flag Train</a></h1>
-
-	<slot />
-
-	<p>
+<div class="flex flex-col h-screen">
+	<header>
+		<h1><a href=".">The Flag Train</a></h1>
+	</header>
+	<main>
+		<slot />
+	</main>
+	<footer>
 		Visit <a class="text-blue-600 underline" href="https://svelte.dev">svelte.dev</a> to learn how to
 		build Svelte apps.
-	</p>
-</main>
+	</footer>
+</div>
 
 <style style lang="postcss">
+	header {
+		@apply flex;
+	}
+
 	main {
-		@apply text-center;
-		@apply p-4;
-		@apply mx-auto;
+		@apply flex;
+		@apply justify-center;
+		@apply items-center;
+		@apply flex-grow;
+		@apply px-4;
+		@apply md:px-0;
 	}
 
 	h1 {
@@ -33,10 +41,12 @@
 		@apply max-w-xs;
 	}
 
-	p {
+	footer {
 		@apply max-w-xs;
 		@apply my-8 mx-auto;
 		@apply leading-snug;
+		@apply text-sm;
+		@apply pb-4;
 	}
 
 	@screen sm {
@@ -45,7 +55,7 @@
 			@apply text-6xl;
 		}
 
-		p {
+		footer {
 			@apply max-w-none;
 		}
 	}

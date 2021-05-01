@@ -37,7 +37,7 @@
 		countriesTried.has(country) && countryCode !== country?.cca3;
 </script>
 
-<div class="grid gap-4 grid-cols-1 md:grid-cols-2 place-items-center">
+<div class="grid gap-4 grid-cols-1 md:grid-cols-2 place-items-center self-start">
 	<div class="md:w-2/3">
 		<Flag {countryCode} />
 	</div>
@@ -76,11 +76,11 @@
 			</button>
 		{/each}
 	</div>
+	<button on:click={next} class="next" disabled={isIncorrect}>
+		Next
+	</button>
 </div>
 
-<button on:click={next} class="next disabled:opacity-50" disabled={isIncorrect}>
-	Next
-</button>
 
 <style style lang="postcss">
 	.next {
@@ -92,9 +92,8 @@
 		@apply rounded-lg;
 		@apply shadow-md;
 		@apply border;
-		/* @apply ring;
-		@apply ring-green-600;
-		@apply ring-offset-2;*/
+		@apply disabled:opacity-50;
+		@apply md:col-span-2;
 		@apply bg-green-600;
 		@apply text-white;
 		@apply focus:outline-none;
