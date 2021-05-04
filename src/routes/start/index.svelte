@@ -1,24 +1,49 @@
+<script context="module" lang="ts">
+	import type { Load } from '@sveltejs/kit';
+
+	export const load: Load = async ({ fetch }) => {
+		const url = '/start/quiz.json';
+		const res = await fetch(url);
+		const countryQuiz = await res.json();
+
+		if (res.ok) {
+			return {
+				props: {
+					countryQuiz
+				}
+			};
+		}
+
+		return {
+			status: res.status,
+			error: new Error(`Could not load ${url}`)
+		};
+	}
+</script>
+
 <script lang="ts">
 	import Flag from '$lib/Flag.svelte';
-	import { generateCountryQuiz } from '$lib/CountryQuiz';
 	import type { Country } from '$lib/Countries';
+	import type { CountryQuiz } from '$lib/CountryQuiz';
+	
+	export let countryQuiz: CountryQuiz;
 
 	let countriesTried = new Set<Country>();
 
 	let selectedCountry: Country;
-
-	let countryQuiz = generateCountryQuiz();
 
 	let countryCode = countryQuiz.countryToGuess.cca3;
 
 	$: isCorrect = countryCode === selectedCountry?.cca3;
 	$: isIncorrect = !isCorrect;
 
-	const next = () => {
+	const next = async () => {
+		const url = '/start/quiz.json';
+		const res = await fetch(url);
+		countryQuiz = await res.json();
+
 		selectedCountry = undefined;
 		countriesTried.clear();
-
-		countryQuiz = generateCountryQuiz();
 
 		countryCode = countryQuiz.countryToGuess.cca3;
 	};
@@ -80,7 +105,6 @@
 		Next
 	</button>
 </div>
-
 
 <style style lang="postcss">
 	.next {
