@@ -1,14 +1,14 @@
 export const getRandomInt = (max: number): number => Math.floor(Math.random() * max);
 
-export const getRandomIndices = (n: number, take = 4):Set<number> => {
+export const getRandomIndices = (n: number, take = 4): Set<number> => {
 	const set = new Set<number>();
-	
+
 	do {
-		set.add(getRandomInt(n))
+		set.add(getRandomInt(n));
 	} while (set.size < take);
-	
+
 	return set;
-}
+};
 
 export const shuffle = <T>(array: T[] = [], seeds: number[] = []): T[] => {
 	if (!seeds.length) {
