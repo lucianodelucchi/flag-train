@@ -18,14 +18,14 @@
 			status: res.status,
 			error: new Error(`Could not load ${url}`)
 		};
-	}
+	};
 </script>
 
 <script lang="ts">
 	import Flag from '$lib/Flag.svelte';
 	import type { Country } from '$lib/Countries';
 	import type { CountryQuiz } from '$lib/CountryQuiz';
-	
+
 	export let countryQuiz: CountryQuiz;
 
 	let countriesTried = new Set<Country>();
@@ -101,9 +101,7 @@
 			</button>
 		{/each}
 	</div>
-	<button on:click={next} class="next" disabled={isIncorrect}>
-		Next
-	</button>
+	<button on:click={next} class="next" disabled={isIncorrect}> Next </button>
 </div>
 
 <style style lang="postcss">
@@ -123,7 +121,7 @@
 		@apply focus:outline-none;
 	}
 
-	.next:enabled { 
+	.next:enabled {
 		@apply ring;
 		@apply ring-green-600;
 		@apply ring-offset-2;
