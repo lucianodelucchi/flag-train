@@ -1,8 +1,4 @@
-<script lang="ts">
- import {ENV} from '$lib/Env';
-</script>
 <a href="/start">Start</a>
-{JSON.stringify(ENV)}
 
 <style style lang="postcss">
 	a {

@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+	import Version from '$lib/Version.svelte'
 	import '../app.postcss';
 </script>
 
@@ -15,6 +16,7 @@
 	<footer>
 		Visit <a class="text-blue-600 underline" href="https://svelte.dev">svelte.dev</a> to learn how to
 		build Svelte apps.
+		<Version></Version>
 	</footer>
 </div>
 
